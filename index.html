@@ -4,13 +4,21 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="script.js"></script>
 <body>
     <h1>Hi, I'm Ravi 👋</h1>
     <h2>Degree Completed. Day 1 of My Developer Journey</h2>
     <p>I will become a Full Stack + AI Developer in 6 months.</p>
     <p>Today I learned: HTML</p>
-    <button>Contact Me</button>
+    <button onclick="showMessage()">Contact Me</button>
+<button onclick="changeColor()">ECE Mode</button>
     <hr>
+    <h2>ECE Mini Project: Ohm's Law Calculator</h2>
+<p>Enter Current(I) and Resistance(R) to get Voltage(V)</p>
+<input type="number" id="current" placeholder="Current in Amps">
+<input type="number" id="resistance" placeholder="Resistance in Ohms">
+<button onclick="calculateVoltage()">Calculate V</button>
+<h3 id="result">V = ?</h3>
 <h2>My ECE Background</h2>
 <p>B.Tech ECE taught me circuit logic & problem solving.</p>
 <p>Skills: C, Microcontrollers, Signals & Systems</p>
