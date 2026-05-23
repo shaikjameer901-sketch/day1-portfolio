@@ -45,3 +45,17 @@ input {
     background: #0f172a;
     color: white;
 }
+<hr>
+<h2>My Projects</h2>
+<div class="projects">
+    <div class="card">
+        <h3>Ohm's Law Calculator</h3>
+        <p>Built with HTML, CSS, JS. Takes I & R, gives V.</p>
+        <p><strong>Tech:</strong> JavaScript DOM</p>
+    </div>
+    <div class="card">
+        <h3>Coming Soon: IoT Dashboard</h3>
+        <p>ESP32 + Web to monitor sensor data live</p>
+        <p><strong>Tech:</strong> ECE + Full Stack</p>
+    </div>
+</div>
