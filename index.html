@@ -21,6 +21,16 @@
 <h2>ECE Project 2: Series Resistor Calculator</h2>
 <hr>
 <h2>ECE Project 3: Parallel Resistor Calculator</h2>
+<hr>
+<h2>ECE Project 4: RC Time Constant Calculator</h2>
+<p>τ (Tau) = R × C. Circuit settling time ≈ 5τ</p>
+<div class="resistor-inputs">
+    <input type="number" id="resR" placeholder="Resistance (Ω)">
+    <input type="number" id="capC" placeholder="Capacitance (F)">
+</div>
+<button onclick="calculateRC()">Calculate τ & 5τ</button>
+<h3 id="rcResult">τ = ?</h3>
+<h3 id="settleTime">Settling Time = ?</h3>
 <p>Enter 5 resistor values. Formula: 1/R = 1/R1 + 1/R2 + 1/R3 + 1/R4 + 1/R5</p>
 <div class="resistor-inputs">
     <input type="number" id="p1" placeholder="R1">

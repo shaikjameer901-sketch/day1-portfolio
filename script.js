@@ -55,3 +55,33 @@ function calculateParallel() {
     document.getElementById("parallelResult").innerHTML = "Total R = " + totalR.toFixed(2) + " Ω";
     document.getElementById("parallelResult").style.color = "#22c55e";
 }
+function calculateRC() {
+    // 1. Get values from inputs
+    let r = document.getElementById("resR").value;
+    let c = document.getElementById("capC").value;
+
+    // 2. Validation - 'return' stops the function if inputs are empty
+    if (r === "" || c === "") {
+        document.getElementById("rcResult").innerHTML = "Enter both R and C ⚠️";
+        document.getElementById("rcResult").style.color = "#ef4444";
+        document.getElementById("settleTime").innerHTML = "";
+        return;
+    }
+
+    // 3. Calculation - Number() converts text to number
+    let tau = Number(r) * Number(c); // τ = R × C
+    let settlingTime = 5 * tau;     // 5τ rule for 99% settling
+
+    // 4. Display Result - toExponential() for scientific notation
+    document.getElementById("rcResult").innerHTML = "τ = " + tau.toExponential(2) + " seconds";
+    document.getElementById("rcResult").style.color = "#22c55e";
+    
+    document.getElementById("settleTime").innerHTML = "Settling Time 5τ = " + settlingTime.toExponential(2) + " seconds";
+    document.getElementById("settleTime").style.color = "#38bdf8";
+}
+// Helper function for showing errors. Reusable everywhere.
+function showError(elementId, message) {
+    document.getElementById(elementId).innerHTML = message;
+    document.getElementById(elementId).style.color = "#ef4444";
+}
+
