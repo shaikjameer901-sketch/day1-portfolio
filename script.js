@@ -1,3 +1,69 @@
+// 1. All project data in one place
+// 2. Cards automatic గా build చేసే function
+// 3. Helper function for scroll
+// 4. Run this when page loads
+displayProjects();
+function scrollToProject(id) {
+    alert("Scroll feature coming Day 11. For now, calculator is below!");
+}
+
+function displayProjects() {
+    const container = document.getElementById("projects-container");
+    let html = "";
+
+    for (let i = 0; i < projects.length; i++) {
+        let project = projects[i];
+        html += `
+            <div class="project-card">
+                <h3>${project.title}</h3>
+                <p><strong>Formula:</strong> ${project.formula}</p>
+                <p>${project.description}</p>
+                <button onclick="scrollToProject('${project.id}')">Use Calculator</button>
+            </div>
+        `;
+    }
+
+    container.innerHTML = html;
+}
+
+const projects = [
+    {
+        title: "Ohm's Law Calculator",
+        formula: "V = I × R",
+        description: "Calculate voltage from current and resistance",
+        id: "ohm"
+    },
+    {
+        title: "Series Resistor Calculator",
+        formula: "R = R1 + R2 +...",
+        description: "Add 5 resistors in series",
+        id: "series"
+    },
+    {
+        title: "Parallel Resistor Calculator",
+        formula: "1/R = 1/R1 + 1/R2 +...",
+        description: "Calculate equivalent resistance in parallel",
+        id: "parallel"
+    },
+    {
+        title: "RC Time Constant",
+        formula: "τ = R × C",
+        description: "Find circuit settling time 5τ",
+        id: "rc"
+    },
+    {
+        title: "Capacitor Series",
+        formula: "1/C = 1/C1 + 1/C2 +...",
+        description: "Total capacitance in series",
+        id: "capSeries"
+    },
+    {
+        title: "Capacitor Parallel",
+        formula: "C = C1 + C2 +...",
+        description: "Total capacitance in parallel",
+        id: "capParallel"
+    }
+];
 function showMessage() {
     alert("Thanks for visiting! I'm ECE grad Jameer, learning Full Stack. Hire me!");
 }
