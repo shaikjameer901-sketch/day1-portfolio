@@ -23,6 +23,30 @@
 <h2>ECE Project 3: Parallel Resistor Calculator</h2>
 <hr>
 <h2>ECE Project 4: RC Time Constant Calculator</h2>
+<hr>
+<h2>ECE Project 5: Capacitor Series Calculator</h2>
+<hr>
+<h2>ECE Project 6: Capacitor Parallel Calculator</h2>
+<p>C = C1 + C2 + C3 + C4 + C5</p>
+<div class="resistor-inputs">
+    <input type="number" id="cp1" placeholder="C1">
+    <input type="number" id="cp2" placeholder="C2">
+    <input type="number" id="cp3" placeholder="C3">
+    <input type="number" id="cp4" placeholder="C4">
+    <input type="number" id="cp5" placeholder="C5">
+</div>
+<button onclick="calculateCapParallel()">Calculate Total C</button>
+<h3 id="capParallelResult">Total C =?</h3>
+<p>1/C = 1/C1 + 1/C2 + 1/C3 + 1/C4 + 1/C5</p>
+<div class="resistor-inputs">
+    <input type="number" id="cs1" placeholder="C1">
+    <input type="number" id="cs2" placeholder="C2">
+    <input type="number" id="cs3" placeholder="C3">
+    <input type="number" id="cs4" placeholder="C4">
+    <input type="number" id="cs5" placeholder="C5">
+</div>
+<button onclick="calculateCapSeries()">Calculate Total C</button>
+<h3 id="capSeriesResult">Total C =?</h3>
 <p>τ (Tau) = R × C. Circuit settling time ≈ 5τ</p>
 <div class="resistor-inputs">
     <input type="number" id="resR" placeholder="Resistance (Ω)">

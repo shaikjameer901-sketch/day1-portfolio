@@ -84,4 +84,41 @@ function showError(elementId, message) {
     document.getElementById(elementId).innerHTML = message;
     document.getElementById(elementId).style.color = "#ef4444";
 }
+function calculateCapSeries() {
+    let capIDs = ["cs1", "cs2", "cs3", "cs4", "cs5"];
+    let sumOfInverse = 0;
 
+    for (let i = 0; i < capIDs.length; i++) {
+        let value = document.getElementById(capIDs[i]).value;
+
+        if (value === "" || Number(value) === 0) {
+            showError("capSeriesResult", "Enter all 5 values. 0 not allowed ⚠️");
+            return;
+        }
+
+        sumOfInverse = sumOfInverse + 1 / Number(value);
+    }
+
+    let totalC = 1 / sumOfInverse;
+    document.getElementById("capSeriesResult").innerHTML = "Total C = " + totalC.toExponential(3) + " F";
+    document.getElementById("capSeriesResult").style.color = "#22c55e";
+}
+
+function calculateCapParallel() {
+    let capIDs = ["cp1", "cp2", "cp3", "cp4", "cp5"];
+    let total = 0;
+
+    for (let i = 0; i < capIDs.length; i++) {
+        let value = document.getElementById(capIDs[i]).value;
+
+        if (value === "") {
+            showError("capParallelResult", "Fill all 5 values ⚠️");
+            return;
+        }
+
+        total = total + Number(value);
+    }
+
+    document.getElementById("capParallelResult").innerHTML = "Total C = " + total.toExponential(3) + " F";
+    document.getElementById("capParallelResult").style.color = "#22c55e";
+}
