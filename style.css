@@ -59,3 +59,15 @@ input {
         <p><strong>Tech:</strong> ECE + Full Stack</p>
     </div>
 </div>
+.resistor-inputs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0;
+}
+.resistor-inputs input {
+    width: 80px;
+    text-align: center;
+}
+
