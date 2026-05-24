@@ -19,6 +19,18 @@
 <div class="projects">
     <hr>
 <h2>ECE Project 2: Series Resistor Calculator</h2>
+<hr>
+<h2>ECE Project 3: Parallel Resistor Calculator</h2>
+<p>Enter 5 resistor values. Formula: 1/R = 1/R1 + 1/R2 + 1/R3 + 1/R4 + 1/R5</p>
+<div class="resistor-inputs">
+    <input type="number" id="p1" placeholder="R1">
+    <input type="number" id="p2" placeholder="R2">
+    <input type="number" id="p3" placeholder="R3">
+    <input type="number" id="p4" placeholder="R4">
+    <input type="number" id="p5" placeholder="R5">
+</div>
+<button onclick="calculateParallel()">Calculate Total R</button>
+<h3 id="parallelResult">Total R =?</h3>
 <p>Enter 5 resistor values in Ohms. Total R = R1 + R2 + R3 + R4 + R5</p>
 <div class="resistor-inputs">
     <input type="number" id="r1" placeholder="R1">

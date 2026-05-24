@@ -35,3 +35,23 @@ function calculateSeries() {
     document.getElementById("seriesResult").innerHTML = "Total R = " + total + " Ω";
     document.getElementById("seriesResult").style.color = "#22c55e";
 }
+function calculateParallel() {
+    let resistorIDs = ["p1", "p2", "p3", "p4", "p5"];
+    let sumOfInverse = 0;
+
+    for (let i = 0; i < resistorIDs.length; i++) {
+        let value = document.getElementById(resistorIDs[i]).value;
+
+        if (value === "" || Number(value) === 0) {
+            document.getElementById("parallelResult").innerHTML = "Enter all 5 values. 0 not allowed ⚠️";
+            document.getElementById("parallelResult").style.color = "#ef4444";
+            return;
+        }
+
+        sumOfInverse = sumOfInverse + 1 / Number(value); // 1/R1 + 1/R2...
+    }
+
+    let totalR = 1 / sumOfInverse;
+    document.getElementById("parallelResult").innerHTML = "Total R = " + totalR.toFixed(2) + " Ω";
+    document.getElementById("parallelResult").style.color = "#22c55e";
+}
