@@ -4,6 +4,34 @@
 // 4. Run this when page loads
 displayProjects();
 function scrollToProject(id) {
+    function scrollToProject(id) {
+    // 1. Map the card ID to tfunction scrollToProject(id) {he corresponding calculator section ID
+    const sectionMap = {
+        "ohm": "ohm-section",
+        "series": "series-section",
+        "parallel": "parallel-section",
+        "rc": "rc-section",
+        "capSeries": "cap-series-section",
+        "capParallel": "cap-parallel-section"
+    };
+
+    const targetId = sectionMap[id];
+    const element = document.getElementById(targetId);
+
+    // 2. Scroll smoothly to the target section
+    if (element) {
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        // 3. Add highlight effect for user feedback
+        element.style.border = "2px solid #38bdf8";
+        setTimeout(() => {
+            element.style.border = "1px solid #334155";
+        }, 2000);
+    }
+}
     alert("Scroll feature coming Day 11. For now, calculator is below!");
 }
 
@@ -188,3 +216,4 @@ function calculateCapParallel() {
     document.getElementById("capParallelResult").innerHTML = "Total C = " + total.toExponential(3) + " F";
     document.getElementById("capParallelResult").style.color = "#22c55e";
 }
+

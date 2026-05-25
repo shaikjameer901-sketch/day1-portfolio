@@ -86,4 +86,37 @@ input {
     color: #38bdf8;
     margin-bottom: 10px;
 }
+/* Mobile First: Styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+   .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+   .resistor-inputs {
+        grid-template-columns: 1fr; /* Stack inputs in a single column */
+    }
+
+    input, button {
+        font-size: 16px; /* Prevents auto-zoom on iOS */
+        padding: 12px;
+    }
+
+   .project-card {
+        padding: 15px;
+    }
+}
+
+/* Smooth scroll for all anchor links and JS scrollIntoView */
+html {
+    scroll-behavior: smooth;
+}
+
 
