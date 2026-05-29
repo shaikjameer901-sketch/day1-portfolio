@@ -1,11 +1,11 @@
 // 1. All project data in one place
-// 2. Cards automatic గా build చేసే function
+// 2. Function to automatically build cards
 // 3. Helper function for scroll
 // 4. Run this when page loads
 displayProjects();
 function scrollToProject(id) {
-    function scrollToProject(id) {
-    // 1. Map the card ID to tfunction scrollToProject(id) {he corresponding calculator section ID
+function scrollToProject(id) {
+    console.log("Button clicked! ID received:", id); // Debug line 1
     const sectionMap = {
         "ohm": "ohm-section",
         "series": "series-section",
@@ -16,20 +16,24 @@ function scrollToProject(id) {
     };
 
     const targetId = sectionMap[id];
+    console.log("Looking for section ID:", targetId); // Debug line 2
     const element = document.getElementById(targetId);
+    console.log("Found element:", element); // Debug line 3
 
-    // 2. Scroll smoothly to the target section
     if (element) {
-        element.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+        console.log("Scrolling now..."); // Debug line 4
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
 
-        // 3. Add highlight effect for user feedback
+        // Highlight effect
+        element.style.transition = "border 0.3s ease";
         element.style.border = "2px solid #38bdf8";
+        console.log("Blue border added"); // Debug line 5
         setTimeout(() => {
             element.style.border = "1px solid #334155";
+            console.log("Border reset"); // Debug line 6
         }, 2000);
+    } else {
+        console.log("ERROR: Element not found. Check your HTML IDs");
     }
 }
     alert("Scroll feature coming Day 11. For now, calculator is below!");
@@ -157,7 +161,7 @@ function calculateRC() {
     // 2. Validation - 'return' stops the function if inputs are empty
     if (r === "" || c === "") {
         document.getElementById("rcResult").innerHTML = "Enter both R and C ⚠️";
-        document.getElementById("rcResult").style.color = "#ef4444";
+        document.getElementById("rcResult").style.color = "#c31111";
         document.getElementById("settleTime").innerHTML = "";
         return;
     }
@@ -168,15 +172,15 @@ function calculateRC() {
 
     // 4. Display Result - toExponential() for scientific notation
     document.getElementById("rcResult").innerHTML = "τ = " + tau.toExponential(2) + " seconds";
-    document.getElementById("rcResult").style.color = "#22c55e";
+    document.getElementById("rcResult").style.color = "#1ae363";
     
     document.getElementById("settleTime").innerHTML = "Settling Time 5τ = " + settlingTime.toExponential(2) + " seconds";
-    document.getElementById("settleTime").style.color = "#38bdf8";
+    document.getElementById("settleTime").style.color = "#268cb8";
 }
 // Helper function for showing errors. Reusable everywhere.
 function showError(elementId, message) {
     document.getElementById(elementId).innerHTML = message;
-    document.getElementById(elementId).style.color = "#ef4444";
+    document.getElementById(elementId).style.color = "#b72323";
 }
 function calculateCapSeries() {
     let capIDs = ["cs1", "cs2", "cs3", "cs4", "cs5"];
@@ -216,4 +220,3 @@ function calculateCapParallel() {
     document.getElementById("capParallelResult").innerHTML = "Total C = " + total.toExponential(3) + " F";
     document.getElementById("capParallelResult").style.color = "#22c55e";
 }
-

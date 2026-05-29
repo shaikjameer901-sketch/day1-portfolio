@@ -1,6 +1,9 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
-    background-color: #0f172a;  /* Dark navy - tech look */
-    color: white;
+    background-color: #300df3;  /* Dark navy - tech look */
+    color: rgb(238, 8, 200);
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 50px;
@@ -21,8 +24,8 @@ p {
 }
 
 button {
-    background-color: #38bdf8;
-    color: #0f172a;
+    background-color: #f8e238;
+    color: #2c0aec;
     border: none;
     padding: 12px 24px;
     font-size: 16px;
@@ -31,19 +34,19 @@ button {
 }
 
 button:hover {
-    background-color: #0ea5e9; /* Hover effect */
+    background-color: #0ee945; /* Hover effect */
 }
 hr {
     margin: 40px 0;
-    border: 1px solid #38bdf8;
+    border: 1px solid #f83882;
 }
 input {
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
-    border: 1px solid #38bdf8;
-    background: #0f172a;
-    color: white;
+    border: 1px solid #8538f8;
+    background: #03020a;
+    color: rgb(204, 128, 35);
 }
 <hr>
 <h2>My Projects</h2>
@@ -77,16 +80,16 @@ input {
     margin: 20px 0;
 }
 .project-card {
-    background: #1e293b;
+    background: #1e3b21;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #334155;
 }
 .project-card h3 {
-    color: #38bdf8;
+    color: #f88b38;
     margin-bottom: 10px;
 }
-/* Mobile First: Styles for screens smaller than 768px */
+/* Mobile First: Styles for screens 768px and smaller */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -101,11 +104,11 @@ input {
     }
 
    .resistor-inputs {
-        grid-template-columns: 1fr; /* Stack inputs in a single column */
+        grid-template-columns: 1fr; /* Stack inputs in a single column on mobile */
     }
 
     input, button {
-        font-size: 16px; /* Prevents auto-zoom on iOS */
+        font-size: 16px; /* Prevents iOS from auto-zooming on input focus */
         padding: 12px;
     }
 
@@ -114,9 +117,23 @@ input {
     }
 }
 
-/* Smooth scroll for all anchor links and JS scrollIntoView */
+/* Smooth scroll for all clicks */
 html {
     scroll-behavior: smooth;
 }
+button {
+    background: #0fa1e0;
+    color: #111215;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
 
-
+button:hover {
+    background: #e9cc0e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(56, 189, 248, 0.3);
+}
